@@ -28,7 +28,7 @@ html {
 	scroll-behavior: smooth;
 }
 
-img {
+img,video,svg {
   max-width: 100%;
 }
 
