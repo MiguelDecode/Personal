@@ -1,9 +1,8 @@
 /* --- VARIABLES CSS --- */
-
 :root {
   /* Colors */
-  --clr-primary: ;
-  --clr-secondary: ;
+  --clr-primary: hsl(0, 0%, 9%);
+  --clr-secondary: hsl(0, 0%, 94%);
   --clr-accent: ;
   --clr-bg: ;
   /* Font and typography */
@@ -14,6 +13,22 @@
   --z-second: 20;
   --z-third: 30;
   --z-modal: 999;
+}
+
+/* --- DARK MODE / HIGH CONTRAST --- */
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --clr-primary: hsl(0, 0%, 94%);
+    --clr-secondary: hsl(0, 0%, 9%);
+  }
+}
+
+@media (prefers-contrast: high) {
+  :root {
+    --clr-primary: hsl(0, 0%, 100%);
+    --clr-secondary: hsl(0, 0%, 0%);
+  }
 }
 
 /* --- RESET --- */
@@ -28,15 +43,26 @@ html {
 	scroll-behavior: smooth;
 }
 
-img,video,svg {
+img,picture,video,iframe,figure {
   max-width: 100%;
+  width: 100%;
+  display: block;
+}
+
+svg {
+  width: 100%;
+  display: block;
+  fill: currentColor;
 }
 
 /* --- BASE --- */
 
 body {
-  font-family: var(--font-family);
   min-height: 100vh;
+  font-size: 100%;
+  font-family: var(--font-family);
+  color: var(--clr-primary);
+  background-color: var(--clr-secondary);
 }
 
 /* --- BREAKPOINTS --- */
